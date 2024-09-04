@@ -173,6 +173,7 @@ class ImageOperationNet(pl.LightningModule):
         output = self.forward(image_pairs)
         loss = F.mse_loss(output, target)
         self.log('val_loss', loss)
+        self.log('val_mae', self.meanAbsoluteError(output, target))
         return loss
     
     def test_step(self, batch, batch_idx):

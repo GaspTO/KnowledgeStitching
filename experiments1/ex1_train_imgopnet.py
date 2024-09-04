@@ -29,7 +29,7 @@ The resuls are MAE 40.6 and 3.3, respectively.
 trainer = pl.Trainer()
 
 # Test ImageOpNet
-dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False)
+dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False, download=True)
 loader = DataLoader(dataset, batch_size=32, shuffle=False)
 trainer.test(image_op_net, loader)
 
@@ -58,6 +58,13 @@ checkpoint_callback = ModelCheckpoint(
     mode='min'
 )
 
+# Initialize the trainer
+trainer = pl.Trainer(
+    max_epochs=max_epochs,
+    callbacks=[checkpoint_callback]
+)
+
+
 for name, param in mnist_net1.named_parameters():
     if 'fc2' not in name:
         param.requires_grad = False
@@ -65,9 +72,10 @@ for name, param in mnist_net1.named_parameters():
 train_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=True)
 val_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False)
 
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=10)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=10)
 
-trainer.fit(image_op_net, train_loader, val_loader)
+trainer.fit(image_op_net, train_loader, val_loader) 
 
 
+# 4.3
