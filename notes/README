@@ -1,0 +1,76 @@
+This is a repository to test the following idea:
+
+
+I was thinking that if we were to train small neural networks with concepts that we know to be important for the task at hand,
+and then add them to the neural network as "mega-neurons", we might speed up the training time.
+
+The rationale is that, even though we can't alter directly the neural network with the domain knowledge, we might allow it
+to learn how to use the pre-learned concepts. 
+
+The method to experiment proposed is to
+
+1) Identify core concepts. We should start small. For example, for chess, we identify the possible movements of pieces, the valuation of pieces, check and checkmates, the concept of threat... 
+2) Train small networks to learn to identify these concepts. For chess, to receive a board and the position of a piece, and output the possible boards corresponding to the results of plays. Then,
+slice the network allowing it to receive embeddings and output embeddings since we do not actually want "human" inputs and outputs. The will call these neuronal units.
+3) Experiment with different ways of connecting them. We can try connecting the same unit to different parts of connecting replicated units to different parts. 
+4) Experiment with different ways of training them. We can try updating these units or not.
+
+* Another thing that might be interesting is whether or not we should prune the units first. This might be useful since adding a bunch of them will increase the forward pass time which might
+go against the goal of minimizing training time. Should these units be pruned even if we want to train them?
+
+
+Here's a list of things to observe:
+1) See the connections of these modules, are they being used? Are they being discarded? If some are and some aren't we prune the irrelevant units after training, or even identify early on which are irrelevant and prune them mid training.
+2) See which ways of 3/4 works better
+3) Compare training without units (obviously) and assess training time and accuracy level; and maybe it's trade-off
+4) Can we also try other modules to see their effect like general useful modules like an ALU module. But also random ones that should no be useful in theory like counting in binary or networks that have been trained for other tasks, and see
+how their connections compare to the domain knowledge modules.
+
+
+
+
+
+
+
+
+
+
+-------------------------
+There's a fundamental question that might need studying first and that is: "can neural networks incorporate pre-made modules"?
+Only then I think it might make sense to study whether or not they can improve performance or training time.
+
+I suggest the following experiment to assess that with the mnist dataset. The goal will be to create a system which receives two digit images and outputs its sum.
+We will do a series of progressive experiments.
+
+1) The first experiment is just control. Train a module to output the number given an image of a number. Then train a network to learn how to sum numbers. Then add two modules of decoding first and connect to the summation module.
+This is just control it should work.
+2) Now, take those very same modules but remove the output of the decoding and the input of the summation module. The goal is to assess whether or not different modules can adapt their representations and converge to a "compatible embedding
+language". This is the capacity that will allow base neural networks to connect to modules - they need to learn to communicate.
+3) Replace the pre-trained decoding modules by empty networks and see whether they can learn how to use the summation module. Assess whether it makes sense to allow the summation module to be trainable or not. This might tell us whether
+modules should be trained or not, or what to expect when they are. Maybe they will diverge? Maybe they will completely change?
+4) Repeat the setup of 3) but now add extra paths from the decoding to the output to see if training will prefer to use the module or to train and use a new one (try with and without trainig the summation module).
+5) Train a summation module that is not as good as it can be, and repeat the setup for 4) to see if the deficencies of the module will force training to use the extra path.
+
+
+* Consider initializiing the weights equally if things start going wrong
+
+
+
+
+
+---------------------------
+IF THIS WORKS.
+
+If we are able to show that adding modules is a good thing, we might want to experiment with creating a bunch of modules, say for chess, or any RL game that we have some domain knowledge for, and have fun with it.
+Creating modules that are only used in input is the same as feature engineering. Note aside, I kind of wonder whether in my thesis I shouldn't simply have created a small network and do a bunch of feature engineering
+and see the result of that.
+In fact, maybe it would be an interesting thing to start this work: to start by assessing the value of feature engineering in a game like chess in terms of performance and training time.
+
+
+
+-------------------------
+Random thoughts:
+* What if we can seriously speed up things like graph neural networks or search based reinforcement learning?
+* I wonder whether logical and NAND and arithmetic units can be useful
+* We can use this to figure out if a base network is using a certain concept. For example, if we have a network to identify animals based on images. We can train a module that identifies ears, then give only the output of this function
+as input to the base network and see if the accuracy is better than random.

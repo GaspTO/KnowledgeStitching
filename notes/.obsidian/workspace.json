@@ -1,0 +1,206 @@
+{
+  "main": {
+    "id": "d32926c4cbfa0e4d",
+    "type": "split",
+    "children": [
+      {
+        "id": "ac5cb44e0dc993df",
+        "type": "split",
+        "children": [
+          {
+            "id": "4a52fac25ec9d768",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "16f172aef3386d47",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Related Work.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "60615fcb90bb801e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c1b69df299e14f6f",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Related Work.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9fae106d15eada13",
+    "type": "split",
+    "children": [
+      {
+        "id": "589559c77ca6d4b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "148b83fbaa2858e3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bf6718dd1a5b730d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "38ca31bd90efad8d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 642.5
+  },
+  "right": {
+    "id": "fc5bcbdb46e29a66",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0b377e3078dc40f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb6ff051045659f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Related Work.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b89e88f630fba083",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Related Work.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6e648d3497b8ce8d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "873c38af263d6ce4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Related Work.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "148b83fbaa2858e3",
+  "lastOpenFiles": [
+    "Experiments1/Pasted image 20240905130116.png",
+    "Experiments1/Experiment 1 - Communication Experiments.md",
+    "Experiments1/Experiment 1 - Control.md",
+    "Experiments1/Experiment 1.1 - Re-learn the layer in between fragments.md",
+    "Experiments1",
+    "Main.md",
+    "Pasted image 20240905121645.png",
+    "Pasted image 20240905120912.png",
+    "Pasted image 20240905014633.png",
+    "Pasted image 20240905014607.png",
+    "Pasted image 20240905014547.png",
+    "Pasted image 20240905012813.png",
+    "Pasted image 20240905130312.png",
+    "Experiments1/Pasted image 20240905130300.png",
+    "Experiments1/Pasted image 20240905152642.png",
+    "Related Work.md",
+    "Experiments1/experiment1.1-tensorboard-event/hparams.yaml",
+    "Experiments1/experiment1.1-tensorboard-event/events.out.tfevents.1725496028.ip-10-192-12-59.5333.1",
+    "Experiments1/experiment1.1-tensorboard-event/events.out.tfevents.1725496025.ip-10-192-12-59.5333.0",
+    "Experiments1/experiment1.1-tensorboard-event",
+    "version_22/hparams.yaml",
+    "version_22/events.out.tfevents.1725496028.ip-10-192-12-59.5333.1",
+    "version_22/events.out.tfevents.1725496025.ip-10-192-12-59.5333.0",
+    "version_22"
+  ]
+}
