@@ -86,4 +86,5 @@ train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_worker
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=6)
 
 trainer.test(image_op_net, val_loader) 
-trainer.fit(image_op_net, train_loader, val_loader) 
+trainer.fit(image_op_net, train_loader, val_loader)
+trainer.test(image_op_net, val_loader) 
