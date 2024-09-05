@@ -59,7 +59,7 @@ max_epochs = 100
 # Checkpoint callback to save the best model
 checkpoint_callback = ModelCheckpoint(
     monitor='val_mae',
-    dirpath='checkpoints/experiments2',
+    dirpath='checkpoints/experiments1/1_2',
     filename='image_op_net-{epoch:02d}-{val_mae:.2f}',
     save_top_k=1,
     mode='min'
