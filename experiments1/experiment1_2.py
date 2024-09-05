@@ -54,7 +54,7 @@ if True:
 Step 2.
 Train ImageOperationNet freezing everything except fc2
 """
-max_epochs = 1
+max_epochs = 100
 
 # Checkpoint callback to save the best model
 checkpoint_callback = ModelCheckpoint(
