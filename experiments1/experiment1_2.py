@@ -73,11 +73,11 @@ trainer = pl.Trainer(
 
 i = 0
 for name, param in image_op_net.named_parameters():
-    if 'mnist_net1.fc2' not in name:
+    if 'mnist_net1.fc2' not in name and 'mnist_net1.fc1' not in name:
         param.requires_grad = False
     else:
         i += 1
-assert i == 2
+assert i == 4
 
 train_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=True)
 val_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False)
