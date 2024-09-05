@@ -9,8 +9,15 @@ one float value.  The ImageOperationNet is constructed by different fragments. W
 ![[ImageOpNet.png]]
 
 
-### Experiment 1.1. - 
+### Experiment 1.1. - Reset last fc layer of MNISTnet1
 see [[1.1 - Reset last fc layer of MNISTnet1]]
 
-### Experiment 1.2.
+commit f03426dc5af5d7f696b0c3098ea7f09a8c1fc450 (HEAD -> main, origin/main)
+Author: Tiago Oliveira <tiagojgroliveira@tecnico.ulisboa.pt>
+Date:   Thu Sep 5 16:46:17 2024 +0100
+
+    Milestone: Finish Experiment 1.1.
+
+### Experiment 1.2. -  Reset all (two) fc layer of MNISTnet1
 see [[1.2. - Reset all (two) fc layer of MNISTnet1]]
+

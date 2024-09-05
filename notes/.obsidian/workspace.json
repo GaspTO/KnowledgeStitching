@@ -8,23 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9172b53208fc0cce",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Experiments1/Communication Experiments.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
             "id": "2737bde481fddc3c",
             "type": "leaf",
             "state": {
@@ -49,19 +32,19 @@
             }
           },
           {
-            "id": "399516e180c18917",
+            "id": "caef6a8cdef3e293",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Experiments1/Communication Experiments.md",
+                "file": "Experiments1/1.1 - Reset last fc layer of MNISTnet1.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "63c3fcd20cb544b1",
+            "id": "399516e180c18917",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -139,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Experiments1/Communication Experiments.md",
+                "file": "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Experiments1/Communication Experiments.md",
+                "file": "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Experiments1/Communication Experiments.md"
+                "file": "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md"
               }
             }
           }
@@ -202,31 +185,32 @@
   },
   "active": "399516e180c18917",
   "lastOpenFiles": [
-    "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
-    "Experiments1/Communication Experiments.md",
+    "Pasted image 20240905203700.png",
+    "Pasted image 20240905203617.png",
     "Experiments1/1.1 - Reset last fc layer of MNISTnet1.md",
+    "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
+    "Experiments1/tensorboards/experiment1.2/hparams.yaml",
+    "Experiments1/tensorboards/experiment1.2/events.out.tfevents.1725553165.ip-10-192-10-202.5991.4",
+    "Experiments1/tensorboards/experiment1.2/events.out.tfevents.1725552205.ip-10-192-10-202.5991.3",
+    "Experiments1/tensorboards/experiment1.2/events.out.tfevents.1725552203.ip-10-192-10-202.5991.2",
+    "Experiments1/tensorboards/experiment1.2",
+    "Experiments1/tensorboards/experiment1.2-tensorboard-event/hparams.yaml",
+    "Experiments1/tensorboards/experiment1.2-tensorboard-event/events.out.tfevents.1725553165.ip-10-192-10-202.5991.4",
+    "Experiments1/tensorboards/experiment1.2-tensorboard-event/events.out.tfevents.1725552205.ip-10-192-10-202.5991.3",
+    "Experiments1/tensorboards/experiment1.2-tensorboard-event/events.out.tfevents.1725552203.ip-10-192-10-202.5991.2",
+    "Experiments1/tensorboards/experiment1.2-tensorboard-event",
+    "Experiments1/Communication Experiments.md",
     "Experiments1/1.0 - Control.md",
     "ImageOpNet.png",
-    "Experiments1/images/ImageOpNet.drawio.crswap",
-    "Experiments1/images/ImageOpNet.drawio",
     "Experiments1/images/experiment1.1/Pasted image 20240905153004.png",
     "Related Work.md",
     "Experiments1/Pasted image 20240905130116.png",
     "Experiments1/Pasted image 20240905130300.png",
-    "Experiments1/images/experiment1.1",
-    "Experiments1/images",
-    "Experiments1/tensorboards/experiment1.1/hparams.yaml",
-    "Experiments1/tensorboards/experiment1.1/events.out.tfevents.1725496028.ip-10-192-12-59.5333.1",
-    "Experiments1/tensorboards/experiment1.1/events.out.tfevents.1725496025.ip-10-192-12-59.5333.0",
-    "Experiments1/tensorboards/experiment1.1",
-    "Experiments1/tensorboards/experiment1.1-tensorboard-event/hparams.yaml",
-    "Experiments1/tensorboards/experiment1.1-tensorboard-event/events.out.tfevents.1725496028.ip-10-192-12-59.5333.1",
     "Main.md",
     "Pasted image 20240905121645.png",
     "Pasted image 20240905120912.png",
     "Pasted image 20240905014633.png",
     "Pasted image 20240905014607.png",
-    "Pasted image 20240905014547.png",
-    "Pasted image 20240905012813.png"
+    "Pasted image 20240905014547.png"
   ]
 }
