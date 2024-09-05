@@ -18,10 +18,10 @@ mnist_net2 = MNISTNet.load_from_checkpoint(mnist_checkpoint_path)
 op_net = OperatorNet.load_from_checkpoint(op_checkpoint_path)
 image_op_net = ImageOperationNet(mnist_net1, mnist_net2, op_net)
 
-checkpoint = "/home/to/Desktop/Tiago/Code/mycode/KnowledgeStitching/checkpoints/experiments1/image_op_net-epoch=94-val_mae=1.76.ckpt"
-image_op_net = ImageOperationNet(MNISTNet(), MNISTNet(), OperatorNet())
-state_dict = torch.load(checkpoint, map_location=torch.device('cpu'))
-image_op_net.load_state_dict(state_dict['state_dict'])
+#checkpoint = "/home/to/Desktop/Tiago/Code/mycode/KnowledgeStitching/checkpoints/experiments1/image_op_net-epoch=94-val_mae=1.76.ckpt"
+#image_op_net = ImageOperationNet(MNISTNet(), MNISTNet(), OperatorNet())
+#state_dict = torch.load(checkpoint, map_location=torch.device('cpu'))
+#image_op_net.load_state_dict(state_dict['state_dict'])
 
 """
 Step 1.
@@ -84,4 +84,4 @@ train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_worker
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=6)
 
 trainer.test(image_op_net, val_loader) 
-#trainer.fit(image_op_net, train_loader, val_loader) 
+trainer.fit(image_op_net, train_loader, val_loader) 
