@@ -25,22 +25,23 @@ Let's run ImageOpNet and MNISTnet after reseting fc2 parameters to
 make sure the error has increased.
 The resuls are MAE 40.6 and 3.3, respectively.
 """
-# Trainer
-trainer = pl.Trainer()
+if False:
+    # Trainer
+    trainer = pl.Trainer()
 
-# Test ImageOpNet
-dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False, download=True)
-loader = DataLoader(dataset, batch_size=32, shuffle=False)
-trainer.test(image_op_net, loader)
+    # Test ImageOpNet
+    dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False, download=True)
+    loader = DataLoader(dataset, batch_size=32, shuffle=False)
+    trainer.test(image_op_net, loader)
 
-# Test MNISTnet
-transform = transforms.Compose([
-    transforms.ToTensor(),  # Convert images to tensor
-    transforms.Normalize((0.1307,), (0.3081,))  # Normalize the dataset
-])
-dataset = RegressionMNIST(root='./data', train=False, download=True, transform=transform)
-loader = DataLoader(dataset, batch_size=32, shuffle=False)
-trainer.test(mnist_net1, loader)
+    # Test MNISTnet
+    transform = transforms.Compose([
+        transforms.ToTensor(),  # Convert images to tensor
+        transforms.Normalize((0.1307,), (0.3081,))  # Normalize the dataset
+    ])
+    dataset = RegressionMNIST(root='./data', train=False, download=True, transform=transform)
+    loader = DataLoader(dataset, batch_size=32, shuffle=False)
+    trainer.test(mnist_net1, loader)
 
 
 """
@@ -64,11 +65,14 @@ trainer = pl.Trainer(
     callbacks=[checkpoint_callback]
 )
 
-
-for name, param in mnist_net1.named_parameters():
-    if 'fc2' not in name:
+i = 0
+for name, param in image_op_net.named_parameters():
+    if 'mnist_net1.fc2' not in name:
         param.requires_grad = False
-    
+    else:
+        i += 1
+assert i == 2
+
 train_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=True)
 val_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False)
 
