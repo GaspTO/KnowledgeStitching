@@ -4,6 +4,7 @@ import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 from pytorch_lightning.callbacks import ModelCheckpoint
+import torch
 
 
 # Model
@@ -17,7 +18,10 @@ mnist_net2 = MNISTNet.load_from_checkpoint(mnist_checkpoint_path)
 op_net = OperatorNet.load_from_checkpoint(op_checkpoint_path)
 image_op_net = ImageOperationNet(mnist_net1, mnist_net2, op_net)
 
-
+checkpoint = "/home/to/Desktop/Tiago/Code/mycode/KnowledgeStitching/checkpoints/experiments1/image_op_net-epoch=94-val_mae=1.76.ckpt"
+image_op_net = ImageOperationNet(MNISTNet(), MNISTNet(), OperatorNet())
+state_dict = torch.load(checkpoint, map_location=torch.device('cpu'))
+image_op_net.load_state_dict(state_dict['state_dict'])
 
 """
 Step 1.
@@ -48,7 +52,7 @@ if False:
 Step 2.
 Train ImageOperationNet freezing everything except fc2
 """
-max_epochs = 100
+max_epochs = 1
 
 # Checkpoint callback to save the best model
 checkpoint_callback = ModelCheckpoint(
@@ -76,10 +80,8 @@ assert i == 2
 train_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=True)
 val_dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False)
 
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=10)
-val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=10)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=6)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=6)
 
-trainer.fit(image_op_net, train_loader, val_loader) 
-
-
-# 4.3
+trainer.test(image_op_net, val_loader) 
+#trainer.fit(image_op_net, train_loader, val_loader) 

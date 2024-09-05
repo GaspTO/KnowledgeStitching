@@ -6,8 +6,8 @@ import torchvision.transforms as transforms
 
 
 # Model
-mnist_checkpoint_path = "./control_checkpoints/mnist-epoch=59-val_mae=0.11.ckpt"
-op_checkpoint_path = "./control_checkpoints/fun1-epoch=19-val_mae=0.00.ckpt"
+mnist_checkpoint_path = "checkpoints/base/mnist-epoch=59-val_mae=0.11.ckpt"
+op_checkpoint_path = "checkpoints/base/fun1-epoch=19-val_mae=0.00.ckpt"
 
 mnist_net1 = MNISTNet.load_from_checkpoint(mnist_checkpoint_path)
 mnist_net2 = MNISTNet.load_from_checkpoint(mnist_checkpoint_path)
@@ -20,7 +20,7 @@ trainer = pl.Trainer()
 
 
 # Test ImageOpNet
-dataset = PairMNIST(MathematicalFunction1.apply, root="./data")
+dataset = PairMNIST(MathematicalFunction1.apply, root="./data", train=False)
 loader = DataLoader(dataset, batch_size=32, shuffle=False)
 trainer.test(image_op_net, loader)
 
