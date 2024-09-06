@@ -130,3 +130,20 @@ class MathematicalFunction1:
         return flat_y.view(-1,1)
 
 
+
+class SinFunction:
+    def __init__(self, low=-10, high=10):
+        self.low = low
+        self.high = high
+
+    def generate_dataset(self, num_samples):
+        X = torch.rand(num_samples, 1) * (self.high - self.low) + self.low
+        y = self.apply(X)
+        return TensorDataset(X,y)
+
+    @staticmethod
+    def apply(X):
+        flat_y = torch.sin(X[:, 0])
+        return flat_y.view(-1,1)
+
+

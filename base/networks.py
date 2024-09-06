@@ -208,3 +208,133 @@ class ImageOperationNet(pl.LightningModule):
 
     def __str__(self):
         return f'Image{str(self.operation_net)}'
+    
+
+
+""" Experiments 2"""
+class SubOpNet(pl.LightningModule):
+    def __init__(self):
+        super(SubOpNet, self).__init__()
+        self.fc1 = nn.Linear(1, 100)
+        self.activation = nn.Sigmoid()
+        self.fc2 = nn.Linear(100, 100)
+        self.fc3 = nn.Linear(100, 100)
+        self.fc4 = nn.Linear(100, 1)
+        self.meanAbsoluteError = torchmetrics.MeanAbsoluteError()
+
+    def forward(self, x):
+        out = self.fc1(x)
+        out = self.activation(out)
+        out = self.fc2(out)
+        out = self.activation(out)
+        out = self.fc3(out)
+        out = self.activation(out)
+        out = self.fc4(out)
+        return out
+
+    def configure_optimizers(self):
+        optimizer = Adam(self.parameters(), lr=0.001)
+        return optimizer
+
+    def training_step(self, batch, batch_idx):
+        x, y = batch
+        y_hat = self(x)
+        loss = F.mse_loss(y_hat, y)
+        self.log('train_loss', loss)
+        return loss
+
+    def validation_step(self, batch, batch_idx):
+        x, y = batch
+        y_hat = self(x)
+        loss = F.mse_loss(y_hat, y)
+        self.log('val_loss', loss)
+        self.log('val_mae', self.meanAbsoluteError(y_hat, y))
+        return loss
+
+    def test_step(self, batch, batch_idx):
+        x, y = batch
+        y_hat = self(x)
+        loss = F.mse_loss(y_hat, y)
+        self.log('test_loss', loss)
+        self.log('test_mae', self.meanAbsoluteError(y_hat, y))
+        return loss
+
+    def __str__(self):
+        return "SubOpNet"
+    
+
+
+class StitchedOpNet(pl.LightningModule):
+    def __init__(self, sub_op_net):
+        super(StitchedOpNet, self).__init__()
+
+        self.sub_op_net = sub_op_net
+
+        self.input_stitch = nn.Linear(125,100)
+        self.output_stitch = nn.Linear(100,125)
+
+        self.fc1 = nn.Linear(2, 500)
+        self.activation = nn.ReLU()
+        self.fc2 = nn.Linear(500, 125)
+        self.fc3 = nn.Linear(250, 100)
+        self.fc4 = nn.Linear(100, 1)
+        self.meanAbsoluteError = torchmetrics.MeanAbsoluteError()
+
+
+    def forward(self, x):
+        ## Begin at the base network
+        out = self.fc1(x)
+        out = self.activation(out)
+        out = self.fc2(out) #125
+        out = self.activation(out) #125
+
+        ## Path towards the stitched network
+        stitch_out = self.input_stitch(out)
+        stitch_out = self.activation(stitch_out)
+        
+        stitch_out = self.sub_op_net.fc2(stitch_out)
+        stitch_out = self.sub_op_net.activation(stitch_out)
+        stitch_out = self.sub_op_net.fc3(stitch_out)
+        stitch_out = self.sub_op_net.activation(stitch_out) 
+
+        stitch_out = self.output_stitch(stitch_out) #125
+        stitch_out = self.activation(stitch_out) #125
+
+        ## Merge
+        out2 = torch.concat((out, stitch_out), dim=1)
+        
+        ## Back at base network
+        out2 = self.fc3(out2)
+        out2 = self.activation(out2)
+        out2 = self.fc4(out2)
+        return out2
+
+    def configure_optimizers(self):
+        optimizer = Adam(self.parameters(), lr=0.001)
+        return optimizer
+
+    def training_step(self, batch, batch_idx):
+        x, y = batch
+        y_hat = self(x)
+        loss = F.mse_loss(y_hat, y)
+        self.log('train_loss', loss)
+        return loss
+
+    def validation_step(self, batch, batch_idx):
+        x, y = batch
+        y_hat = self(x)
+        loss = F.mse_loss(y_hat, y)
+        self.log('val_loss', loss)
+        self.log('val_mae', self.meanAbsoluteError(y_hat, y))
+        return loss
+
+    def test_step(self, batch, batch_idx):
+        x, y = batch
+        y_hat = self(x)
+        loss = F.mse_loss(y_hat, y)
+        self.log('test_loss', loss)
+        self.log('test_mae', self.meanAbsoluteError(y_hat, y))
+        return loss
+
+    def __str__(self):
+        return "SubOpNet"

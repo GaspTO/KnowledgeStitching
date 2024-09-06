@@ -16,5 +16,11 @@
             "request": "launch",
             "module": "experiments1.${fileBasenameNoExtension}"
         },
+        {
+            "name": "Experiments2 module",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "experiments2.${fileBasenameNoExtension}"
+        },
     ]
 }

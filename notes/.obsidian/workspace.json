@@ -4,71 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "13a5869d5ea760c9",
+        "id": "4b8b07c1269c71ee",
         "type": "tabs",
         "children": [
           {
-            "id": "2737bde481fddc3c",
+            "id": "cc9418f793990ef5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Experiments1/Communication Experiments.md",
+                "file": "Experiments2/2.2. - Approximate function with useless fragment.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "63ab278daf381751",
+            "id": "2361bd6ea3aafe27",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Experiments1/Communication Experiments.md",
+                "file": "Experiments2/2.1.  - Approximate function with useful sin fragment.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "caef6a8cdef3e293",
+            "id": "9e9fcab114f6bfa3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Experiments1/1.1 - Reset last fc layer of MNISTnet1.md",
+                "file": "Experiments2/Stitch network.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1d74094dc4c00c91",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2afa2ce55abcc3f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Experiments1/1.1 - Reset last fc layer of MNISTnet1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3a0b64f1313bb50c",
+            "id": "21ba3e9be6a51e6d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -80,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Experiments1/1.3. - Reset last two fc of MNISTnet1 and first of OpNet.md",
+                "file": "Experiments2/2.1.  - Approximate function with useful sin fragment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Experiments1/1.3. - Reset last two fc of MNISTnet1 and first of OpNet.md",
+                "file": "Experiments2/2.1.  - Approximate function with useful sin fragment.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Experiments1/1.3. - Reset last two fc of MNISTnet1 and first of OpNet.md"
+                "file": "Experiments2/2.1.  - Approximate function with useful sin fragment.md"
               }
             }
           }
@@ -207,35 +183,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "148b83fbaa2858e3",
+  "active": "2361bd6ea3aafe27",
   "lastOpenFiles": [
-    "Experiments1/tensorboards/experiment1.3/hparams.yaml",
-    "Experiments1/tensorboards/experiment1.3/events.out.tfevents.1725570854.ip-10-192-12-67.2474.2",
-    "Experiments1/tensorboards/experiment1.3/events.out.tfevents.1725569874.ip-10-192-12-67.2474.1",
-    "Experiments1/tensorboards/experiment1.3/events.out.tfevents.1725569872.ip-10-192-12-67.2474.0",
-    "Experiments1/tensorboards/experiment1.3",
-    "Experiments1/tensorboards/experiment1.3-tensorboard-event/hparams.yaml",
-    "Experiments1/tensorboards/experiment1.3-tensorboard-event/events.out.tfevents.1725570854.ip-10-192-12-67.2474.2",
-    "Experiments1/tensorboards/experiment1.3-tensorboard-event/events.out.tfevents.1725569874.ip-10-192-12-67.2474.1",
-    "Experiments1/tensorboards/experiment1.3-tensorboard-event/events.out.tfevents.1725569872.ip-10-192-12-67.2474.0",
-    "Experiments1/tensorboards/experiment1.3-tensorboard-event",
-    "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
+    "Experiments2/tensorboard/experiment2_1_untrained_fragment_stitchnet/hparams.yaml",
+    "Experiments2/tensorboard/experiment2_1_untrained_fragment_stitchnet/events.out.tfevents.1725624100.to-Modern-14-A10M.1843056.1",
+    "Experiments2/tensorboard/experiment2_1_untrained_fragment_stitchnet/events.out.tfevents.1725620370.to-Modern-14-A10M.1843056.0",
+    "Experiments2/tensorboard/experiment2_1_untrained_fragment_stitchnet",
+    "Experiments2/tensorboard/version_38/hparams.yaml",
+    "Experiments2/tensorboard/version_38/events.out.tfevents.1725624100.to-Modern-14-A10M.1843056.1",
+    "Experiments2/tensorboard/version_38/events.out.tfevents.1725620370.to-Modern-14-A10M.1843056.0",
+    "Experiments2/tensorboard/version_38",
+    "Pasted image 20240906130312.png",
+    "Pasted image 20240906130248.png",
+    "Experiments2/tensorboard/experiment2_1_pretrained_fragment_stitchnet/hparams.yaml",
+    "Experiments2/tensorboard/experiment2_1_pretrained_fragment_stitchnet/events.out.tfevents.1725616904.to-Modern-14-A10M.1505865.2",
+    "Experiments2/tensorboard/experiment2_1_pretrained_fragment_stitchnet/events.out.tfevents.1725616866.to-Modern-14-A10M.1505865.1",
+    "Experiments2/Stitch network.md",
     "Experiments1/1.3. - Reset last two fc of MNISTnet1 and first of OpNet.md",
-    "Experiments1/1.1 - Reset last fc layer of MNISTnet1.md",
+    "Experiments2/2.1.  - Approximate function with useful sin fragment.md",
+    "Experiments2/2.2. - Approximate function with useless fragment.md",
+    "Experiments1/Communication Experiments.md",
+    "Experiments1/1.0. - Control.md",
+    "Experiments1/1.1.  - Reset last fc layer of MNISTnet1.md",
+    "Untitled.md",
+    "Experiments1/1.2. - Reset all (two) fc layer of MNISTnet1.md",
     "Pasted image 20240905224237.png",
     "Pasted image 20240905224134.png",
-    "Experiments1/Communication Experiments.md",
     "Pasted image 20240905203700.png",
     "Pasted image 20240905203617.png",
-    "Experiments1/tensorboards/experiment1.2/hparams.yaml",
-    "Experiments1/1.0 - Control.md",
     "ImageOpNet.png",
     "Experiments1/images/experiment1.1/Pasted image 20240905153004.png",
     "Related Work.md",
     "Experiments1/Pasted image 20240905130116.png",
     "Experiments1/Pasted image 20240905130300.png",
-    "Main.md",
-    "Pasted image 20240905121645.png",
-    "Pasted image 20240905120912.png"
+    "Main.md"
   ]
 }
