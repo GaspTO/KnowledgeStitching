@@ -275,9 +275,9 @@ class StitchedOpNet(pl.LightningModule):
 
         self.fc1 = nn.Linear(2, 500)
         self.activation = nn.ReLU()
-        self.fc2 = nn.Linear(500, 125)
-        self.fc3 = nn.Linear(250, 100)
-        self.fc4 = nn.Linear(100, 1)
+        self.fc2 = nn.Linear(500, 125) #--->
+        self.fc3 = nn.Linear(250, 100) #<--
+        self.fc4 = nn.Linear(100, 1) 
         self.meanAbsoluteError = torchmetrics.MeanAbsoluteError()
 
 

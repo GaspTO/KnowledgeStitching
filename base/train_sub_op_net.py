@@ -16,8 +16,8 @@ if __name__ == "__main__":
     num_samples_test = 10000
 
     train_dataset = SinFunction(-10,10).generate_dataset(num_samples_train)
-    val_dataset = SinFunction(-20,20).generate_dataset(num_samples_val)
-    test_dataset = SinFunction(-20,20).generate_dataset(num_samples_test)
+    val_dataset = SinFunction(-10,10).generate_dataset(num_samples_val)
+    test_dataset = SinFunction(-10,10).generate_dataset(num_samples_test)
 
     # Define DataLoader parameters
     batch_size = 64
